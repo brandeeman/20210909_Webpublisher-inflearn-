@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- 반응형 웹사이트를 위한 필수적인 메타 -->
+  <!-- meta:vp -> enter -->
+  <!-- 설명 : 전체 UI UX를 제어하는 플러그인 다운로드 및 폴더파일 세팅하기 : 12분 -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to ee land</title>
+
+  <!-- j-Query 오픈 소스 연결-->
+  <!-- script:src -> enter -->
+  <script src="js/jquery-2.1.4.js"></script>
+
+  <!-- j-Query 플러그인 연결 : Smooth Scrolling : 부드럽게 슬라이딩 기능만 있다. -->
+  <script src="js/jquery.scrollTo.min.js"></script>
+
+  <!-- Page Scroll Effects JS & CSS -->
+  <!-- 순서는 중요하다. 페이지 js들 -->
+  <script src="js/velocity/modernizr.js"></script>
+  <script src="js/velocity/velocity.min.js"></script>
+  <script src="js/velocity/velocity.ui.min.js"></script>
+
+  <!-- CSS는 link로 연결 -->
+  <script src="js/velocity/main.js"></script>
+  <link rel="stylesheet" href="js/velocity/velocity.css">
+
+  <!-- Custom JS & CSS -->
+  <script src="custom.js"></script>
+
+  <!-- 순서가 중요하다. PC. 모바일 -->
+  <!-- 1.PC : style.css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2.모바일 : resjponsive.css -->
+  <link rel="stylesheet" href="responsive.css">
+</head>
+
+<!-- 애니메이션 변경 내용 -->
+<!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
+
+<body data-hijacking="on" data-animation="rotate">
+
+  <!-- container : section을 묶음 -->
+  <div class="container">
+    <section class="cd-section visible" id="home">
+      <div>
+        <div class="content">
+          <img src="images/temp-section-01.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section class="cd-section" id="about">
+      <div>
+        <div class="content">
+          <img src="images/temp-section-02.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section class="cd-section" id="project">
+      <div>
+        <div class="content">
+          <img src="images/temp-section-03.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section class="cd-section" id="plan">
+      <div>
+        <div class="content">
+          <img src="images/temp-section-04.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section class="cd-section" id="awards">
+      <div>
+        <div class="content">
+          <img src="images/temp-section-05.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section class="cd-section" id="location">
+      <div>
+        <div class="content">
+          <img src="images/temp-section-06.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section class="cd-section" id="contact">
+      <div>
+        <div class="content">
+          <img src="images/temp-section-07.jpg">
+        </div>
+      </div>
+    </section>
+
+    <!-- 헤더 -->
+    <header>
+      <div class="gnb-inner">
+        <div class="logo">
+          <!-- 오른쪽 상단 -->
+          <a href="#none"><img src="images/logo.png"></a>
+        </div>
+
+        <!-- 왼쪽 하얀 박스 -->
+        <div class="gnb">
+          <div class="menu">
+            <!-- 값을 누르면 찾아간다. -->
+            <!-- <a href="#none">Home</a> -->
+            <!-- home이라는 ID값을 찾아 갈 수 있게 -->
+            <a href="#home">Home</a>
+            <!-- about이라는 ID값을 찾아 갈 수 있게 -->
+            <a href="#about">About</a>
+            <a href="#project">Project</a>
+            <a href="#plan">Plan & History</a>
+            <a href="#awards">Awards</a>
+            <a href="#location">Location</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <!-- 왼쪽 상단 -->
+          <div class="slogan">We design places, not projects.</div>
+        </div>
+        <!-- 작대기 3개 -->
+        <div class="trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <nav>
+    <ul class="cd-vertical-nav">
+      <li><a href="#0" class="cd-prev inactive">Next</a></li>
+      <li><a href="#0" class="cd-next">Prev</a></li>
+    </ul>
+  </nav>
+
+</body>
+
+</html>

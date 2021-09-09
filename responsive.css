@@ -1,0 +1,170 @@
+/* 모바일 CSS 부분 */
+/* 순서가 style.css 부분을 상속받는다. */
+
+/* 미디어 쿼리 */
+/* @media (크기){
+
+    의미 : 크기라는 부분에 해당하면 {}실행
+    해당하지 않으면 {}실행하지 않는다.
+} */
+
+/* pc 디바이스만 체크 하겠다. */
+/* @media(min-width: 1024) */
+/* 1024이상 */
+
+/* 모바일 디바이스만 체크 하겠다. */
+/* @media(max-width: 768px){} */
+/* 768미만 */
+
+/* pc에서 복사 가져오기 */
+/* 바꾸지 않을 부분은 지우기 */
+@media (max-width: 768px) {
+
+    /* Entire Layout : 전체 layout */
+    .cd-section {
+        /* 높이를 가득 채운다. */
+        /* auto : 내용이 많으면 늘어나고, 적으면 적은대로 줄어든다. */
+        height: auto;
+    }
+
+    /* 바로 밑에 div 적용 */
+    .cd-section>div {
+        height: auto;
+    }
+
+
+    /* 여기부터 마음대로 */
+    .content {
+        /* position에 대해 : https://electronic-moongchi.tistory.com/26 */
+        /* static : 밑으로 총총이 쌓인다. */
+        position: static;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Header
+    header {
+      transition: 0.5s;
+      z-index: 100;
+    }
+  
+    header.active {
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+    } */
+
+    /* Header */
+    .menu {
+        /* block : display가 보인다. */
+        display: block;
+    }
+
+    .slogan {
+        /* none : 안보이게 한다. */
+        display: none;
+    }
+
+    /* 오른쪽 숨어있다가 나오는 박스 */
+    .gnb {
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        right: -270px;
+
+        /* 박스 크기 */
+        width: 250px;
+
+        /* view-port 이상 넘어갈 일이 없기 때문이다. */
+        height: 100vh;
+
+        /* 
+      *박스 그림자 : 가로(마이너스 : 왼쪽으로 간다.) 세로(0: 위아래 채우기) 퍼짐정도. 색  
+      *하는 이유 : 화이트 컨텐츠 만났을 때 구분하기 위해서*/
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+
+        /* 나오는 느낌 */
+        transition: 0.5s;
+    }
+
+    .gnb.active {
+        right: 0;
+    }
+
+    .menu {
+        line-height: 40px;
+        margin-top: 60px;
+    }
+
+    .menu a {
+        /* 블록은 한 줄에 하나만 올 수 있기에 '가로'로 나열된 단어를 '세로'로 만들어 준다. : Home About Project */
+        text-align: right;
+        display: block;
+        padding-right: 20px;
+        color: #000;
+        font-size: 20px;
+    }
+
+    /* Trigger : 작대기 3개 */
+    .trigger {
+        display: block;
+        /* 임시 보더 */
+        /* border: 1px solid red; */
+
+        /* 크기 */
+        width: 24px;
+        height: 14px;
+        position: absolute;
+        /* 오른쪽 상단 */
+        right: 20px;
+        top: 20px;
+
+        /* tirgger 부모요소 포지션 */
+        /* 이미 위에 있으니 주면 안된다. */
+        /* position: relative; */
+    }
+
+    /* 부모 요소. 자식 요소 : 전체 적용 */
+    .trigger span {
+        /* trigger 자식요소 포지션 : absolute*/
+        /* absoulte는 inline이 적용된다. */
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: #000;
+
+        /* span에 transition을 주기 위한 0.3초 */
+        transition: 0.5s;
+    }
+
+    .trigger span:nth-child(1) {
+        top: 0;
+    }
+
+    .trigger span:nth-child(2) {
+        top: 50%;
+        width: 80%;
+    }
+
+    .trigger span:nth-child(3) {
+        top: 100%;
+    }
+
+    .trigger.active span:nth-child(1) {
+        top: 50%;
+        /* 45도 회전 */
+        transform: rotate(45deg)
+    }
+
+    .trigger.active span:nth-child(2) {
+        top: 50%;
+        width: 80%;
+        /* 없어진다. */
+        opacity: 0;
+    }
+
+    .trigger.active span:nth-child(3) {
+        top: 50%;
+        /* 45도 반대로 회전 */
+        transform: rotate(-45deg)
+    }
+}

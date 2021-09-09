@@ -1,0 +1,132 @@
+/* PC CSS 부분 */
+
+/* 폰트 넣는 법 */
+/* Google Web Font : Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Manrope:300,400,500,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+/* FontAwesome CDN 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*  */
+
+/* Reset CSS : 전체 틀 잡기*/
+/* 전체 선택자 */
+* {
+  box-sizing: border-box;
+}
+
+/* 목록은 대체로 사용 안함 */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*  */
+
+/* Default CSS */
+body {
+  font-family: 'Montserrat', sans-serif;
+  /* 글씨 검정 */
+  color: #222;
+  font-size: 15px;
+  margin: 0;
+  height: 100vh;
+  background-color: #fff;
+}
+
+
+/*  */
+
+/* Entire Layout : 전체 layout */
+.cd-section {
+
+  /* 높이를 가득 채운다. */
+  /* vh : viewport height : pc를 정확하게 가득채우겠다. */
+  height: 100vh;
+}
+
+/* 바로 밑에 div 적용 */
+/* position에 대해 : https://electronic-moongchi.tistory.com/26 */
+.cd-section>div {
+  height: 100%;
+  position: relative;
+}
+
+/* 여기부터 마음대로 */
+.content {
+  background-color: #ddd;
+  position: absolute;
+  /* calc : 왼쪽 20. 오른쪽 20을 띄운다. */
+  /* calc 내용에 대한 설명 : 전체 레이아웃 와이어프레임 퍼블리싱(PC) - 전체레이아웃, 헤더영역 : 9분; */
+
+  width: calc(100% - 40px);
+
+  /* calc : 위에 60. 아래쪽 20을 띄운다. */
+  height: calc(100% - 80px);
+  left: 20px;
+  bottom: 20px;
+
+  /* 이미지 밑에 오버된 부분을 끊어준다. */
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  /* 위치 고정 : 모바일에서 필요 */
+  position: fixed;
+  /* fixed로 주면 in-line 성질이 되기에 줄어든다. width: 100를 줘야 한다. */
+
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.gnb-inner {
+  /* 검은색 border */
+  /* border: 1px solid #000; */
+
+  /* 양 옆 간격 20px씩 띄우기 */
+  width: calc(100% - 40px);
+  /* 중앙으로 온다. */
+
+  margin: auto;
+
+  /*전체 레이아웃 와이어프레임 퍼블리싱(PC) - 전체레이아웃, 헤더영역 : 15분 설명 */
+  height: 60px;
+
+  /* 글씨 중앙 */
+  line-height: 60px;
+}
+
+.logo {
+  /* 로고 왼쪽 배치 */
+  float: left;
+}
+
+.gnb {
+  float: right;
+}
+
+.menu {
+  /* pc버전에는 사용하지 않는다. */
+  display: none;
+}
+
+.menu a {}
+
+.slogan {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* trigger : 작대기 3개 */
+.trigger {
+  /* pc버전에는 보이지 않게 한다. */
+  display: none;
+}
